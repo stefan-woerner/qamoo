@@ -35,7 +35,7 @@ class ProblemGraphBuilder:
 
     def serialize(self, name: str, target_dir: str) -> None:
         target_file = os.path.join(target_dir, name)
-        j_graph = json_graph.node_link_data(self.graph)
+        j_graph = json_graph.node_link_data(self.graph, edges="links")
         with open(target_file + '.json', 'w') as f:
             json.dump(j_graph, f, indent=2)
 
@@ -43,5 +43,5 @@ class ProblemGraphBuilder:
     def deserialize(filename: str) -> nx.Graph:
         with open(filename) as f:
             data = json.load(f)
-        return json_graph.node_link_graph(data)
+        return json_graph.node_link_graph(data, edges="links")
 

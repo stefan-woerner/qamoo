@@ -1,0 +1,10 @@
+jupyter
+matplotlib
+tqdm
+cloudpickle
+numba
+gurobipy
+qiskit==1.3.2
+qiskit_ibm_runtime==0.36.0
+qiskit_optimization[cvx]==0.6.1
+qiskit_aer==0.16.0

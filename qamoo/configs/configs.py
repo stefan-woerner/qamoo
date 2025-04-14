@@ -3,7 +3,7 @@ from dataclasses import dataclass
 import json
 from typing import List
 
-from qmoo.tools.data_structures import ProblemGraphBuilder
+from qamoo.utils.data_structures import ProblemGraphBuilder
 
 
 @dataclass

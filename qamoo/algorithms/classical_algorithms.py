@@ -15,7 +15,7 @@ from qiskit_optimization.applications import Maxcut
 
 import gurobipy as gp
 from gurobipy import GRB
-from gurobipy.gurobipy import tupledict, Var
+from gurobipy import tupledict, Var
 
 
 def random(config, overwrite_results=False):

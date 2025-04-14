@@ -123,3 +123,19 @@ def compute_hypervolume_progress(problem_folder, results_folder, steps):
     # store samples and positions
     np.save(results_folder + 'non_dominated_samples.npy', non_dominated_samples)
     np.save(results_folder + 'non_dominated_positions.npy', positions)
+
+
+def save_results(results_folder: str, samples: np.ndarray, objective_weights):
+    # save results
+    np.save(results_folder + 'samples.npy', samples)
+    if objective_weights is not None:
+        np.save(results_folder + 'objective_weights.npy', np.array(objective_weights))
+
+
+def write_runtime(results_folder, t_pre, t_exec):
+    runtime = {}
+    runtime['pre-processing'] = t_pre
+    runtime['execution'] = t_exec
+
+    with open(results_folder + 'runtime.json', 'w') as f:
+        json.dump(runtime, f)

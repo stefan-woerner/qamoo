@@ -22,7 +22,6 @@ from qiskit.primitives import BackendSamplerV2
 from qiskit.converters import circuit_to_dag, dag_to_circuit
 
 from qiskit_ibm_runtime import SamplerV2, Batch, Session
-from qiskit_ibm_runtime.transpiler.passes.basis.fold_rzz_angle import convert_to_rzz_valid_pub
  
 from qiskit_optimization.applications import Maxcut
 
@@ -212,10 +211,6 @@ def batch_execute_qaoa_circuits_parametrized(configs, backend):
                     
                     # update pub to satisfy RZZ angle constraints
                     pub = [(circuits[i], param_values[start:end], configs[i].shots)]
-                    if backend.options.use_fractional_gates:
-                        print('convert to valid rzz angles for using fractional gates.')
-                        pub = convert_to_rzz_valid_pub('sampler', pub)
-
                     job = sampler.run(pub)
                     jobs_i += [job]
 
@@ -250,10 +245,6 @@ def batch_execute_qaoa_circuits_parametrized(configs, backend):
                 
                 # update pub to satisfy RZZ angle constraints
                 pub = (circuits[i], param_values[start:end], configs[i].shots)
-                if backend.options.use_fractional_gates:
-                    print('convert to valid rzz angles for using fractional gates.')
-                    pub = convert_to_rzz_valid_pub('sampler', pub)
-
                 job = sampler.run([pub])
                 result = job.result()
                 results += [result]
@@ -420,11 +411,6 @@ def session_execute_qaoa_circuits_parametrized(configs, backend):
                     
                     # update pub to satisfy RZZ angle constraints
                     pub = (qc, param_values[start:end], configs[i].shots)
-                    if backend.options.use_fractional_gates:
-                        qc.remove_final_measurements()
-                        pub = convert_to_rzz_valid_pub('sampler', pub)
-                        pub.circuit.measure_all()
-
                     job = sampler.run([pub])
                     jobs_i += [job]
 
@@ -455,11 +441,6 @@ def session_execute_qaoa_circuits_parametrized(configs, backend):
 
                 # update pub to satisfy RZZ angle constraints
                 pub = (circuits[i], param_values[start:end], configs[i].shots)
-                if backend.options.use_fractional_gates:
-                    circuits[i].remove_final_measurements()
-                    pub = convert_to_rzz_valid_pub('sampler', pub)
-                    pub.circuit.measure_all()
-                
                 job = sampler.run([pub])
                 result = job.result()
                 results += [result]

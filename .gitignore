@@ -4,3 +4,5 @@
 **/__pycache__/
 *.nbc
 *.nbi
+/qamoo.egg-info
+/qamoo/utils/__pycache__
