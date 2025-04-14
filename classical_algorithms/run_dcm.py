@@ -11,14 +11,14 @@ def compute_dcm(num_qubits, num_swap_layers, num_objectives, version, factor_int
 
 if __name__ == "__main__":
 
-    # timeout = 20000 is fixed in dcm code
+    # timeout = 20000 can be changed in dcm/Headers/extern_parameters.h
     factor_integer = 100
     num_objectives = 3
     num_qubits = 27
     num_swap_layers = 0
     version = 0
                         
-    #generate_lp_file_dcm(num_qubits, num_swap_layers, num_objectives, version, factor_integer)
+    generate_lp_file_dcm(num_qubits, num_swap_layers, num_objectives, version, factor_integer)
     compute_dcm(num_qubits, num_swap_layers, num_objectives, version, factor_integer)
 
 
