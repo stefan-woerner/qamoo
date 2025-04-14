@@ -6,3 +6,6 @@
 *.nbi
 /qamoo.egg-info
 /qamoo/utils/__pycache__
+venv
+.venv/
+.idea/
