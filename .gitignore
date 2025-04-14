@@ -2,4 +2,5 @@
 *checkpoint.ipynb
 *.pyc
 **/__pycache__/
-
+*.nbc
+*.nbi
