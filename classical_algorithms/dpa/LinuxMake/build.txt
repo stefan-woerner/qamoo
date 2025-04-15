@@ -1,8 +1,0 @@
-# Build DefiningPoint on linux
-
-Use the provided Makefile for compiling the algorithm.
-The Makefile uses the environment variable CPLEX_DIRECTORY for finding CPLEX's libraries and header files.
-
-Tested on Ubunto 23.04 with CPLEX 120 and clang 15. 
-
-Build with calling "make" from the terminal.

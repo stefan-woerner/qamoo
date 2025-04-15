@@ -1,0 +1,3 @@
+[submodule "classical_algorithms/classical_algorithms_moip"]
+	path = classical_algorithms/classical_algorithms_moip
+	url = git@github.com:stephaniehoffmann/classical-algorithms-moip.git
