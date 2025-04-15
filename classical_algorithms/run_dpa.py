@@ -4,7 +4,7 @@ import os
 
 def compute_dpa(num_qubits, num_swap_layers, num_objectives, version, timeout, factor_integer):
     working_directory = os.getcwd()
-    dpa = f"classical_algorithms_moip/dpa/LinuxMake/main"
+    dpa = f"classical_algorithms_moip/dpa/main"
     problem_file = f"{working_directory}/../data/problems/{num_qubits}q/problem_set_{num_qubits}q_{num_swap_layers}s_{num_objectives}o_{version}/problem_{num_qubits}_{num_swap_layers}_{num_objectives}_{version}_dpa.lp"
     flag = f"-a"    # augmented epsilon constraint method
     output = f"{working_directory}/../data/problems/{num_qubits}q/problem_set_{num_qubits}q_{num_swap_layers}s_{num_objectives}o_{version}/results/dpa_{factor_integer}"
