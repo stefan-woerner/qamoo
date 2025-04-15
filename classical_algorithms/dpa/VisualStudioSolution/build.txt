@@ -1,0 +1,35 @@
+# Build DefiningPoint with Visual Studio
+
+## Use/adjust the example Visual studio solution
+This Visual Studio solution can be used for compiling the algorithm on a Windows machine.
+The solution assumes that CPLEX is installed in the default path: "C:\Program Files\IBM\ILOG\CPLEX_Studio_Community129".
+If CPLEX uses another path or version, adjust the path in the file DefiningPoint.vcx.proj 
+or by using the GUI of Visual Studio.
+
+## Set up  your own Visual Studio solution
+
+1. Create a new empty Visual Studio project.
+
+2. From the main project window, navigate to Build | Configuration Manager. Set the Active solution configuration to Release, 
+and that Active solution platform is set to whatever matches your CPLEX installation (e.g. x64).
+
+3. Linking: Open Project | [project name] Properties.
+Open Configuration Properties | C/C++ | General. 
+Edit Additional Include Directories to include the file paths both the CPLEX and the CONCERT
+directories: C:\Program Files\IBM\ILOG\CPLEX_Studio127\cplex\include;C:\Program Files\IBM\ILOG\CPLEX_Studio127\concert\include
+
+4. In "Preprocessor": add the following to the Preprocessor Definitions:
+WIN32;
+_CONSOLE;
+IL_STD
+
+5. Go to "Linker | General": Edit Additional Library Directories to include the stat_mda folders in both the CPLEX and the CONCERT directories, separated
+C:\Program Files\IBM\ILOG\CPLEX_Studio129\cplex\lib\x64_windows_vs2015\stat_mda;C:\Program Files\IBM\ILOG\CPLEX_Studio127\concert\lib\x64_windows_vs2015\stat_mda
+
+6. In "Linker" go to Input. Edit the Additional Dependencies to contain the .lib files for
+CPLEX (including your version number, e.g. 12.9.0), CONCERT, and ILOCPLEX:
+cplex1290.lib;
+concert.lib;
+ilocplex.lib
+
+
