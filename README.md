@@ -17,6 +17,7 @@ The code uses Python 3.10 and all requirements except `pygmo` can be installed v
 To train parameters, [JuliQAOA](https://arxiv.org/abs/2312.06451) needs to be installed:
 https://github.com/lanl/JuliQAOA.jl.
 
+The experiments on real quantum hardware require access to the [Qiskit IBM Runtime](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/runtime-service). Alternatively, Matrix Product State (MPS) simulations can be performed using [Qiskit Aer](https://qiskit.github.io/qiskit-aer/).
 
 ### Installing pygmo2
 
