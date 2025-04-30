@@ -19,6 +19,8 @@ https://github.com/lanl/JuliQAOA.jl.
 
 The experiments on real quantum hardware require access to the [Qiskit IBM Runtime](https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/runtime-service). Alternatively, Matrix Product State (MPS) simulations can be performed using [Qiskit Aer](https://qiskit.github.io/qiskit-aer/).
 
+Some classical algorithms require access to commercial solvers like CPLEX or GUROBI, which provide academic licenses that may be applicable in certain cases.
+
 ### Installing pygmo2
 
 The following installs `pygmo` using `homebrew`: 
